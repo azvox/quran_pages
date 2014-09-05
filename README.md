@@ -6,6 +6,6 @@ To install download the project download the quran_pages foder put in your /site
 download the required modules and enable them. the quran_pages module in in Features module.
 If you want to implement quran audio download one of page mp3 at qurandownload.org(not implemented yet).
 
-Now should have a quran page that looks like this websites http://sonna.net/quran_pages.
+Now should have a quran page that looks like this websites http://sonna.net/quran-pages.
 
 Enjoy and let me know.
