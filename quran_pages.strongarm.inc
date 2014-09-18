@@ -74,9 +74,6 @@ function quran_pages_strongarm() {
       'rss' => array(
         'custom_settings' => FALSE,
       ),
-      'token' => array(
-        'custom_settings' => FALSE,
-      ),
       'search_index' => array(
         'custom_settings' => FALSE,
       ),
@@ -86,23 +83,48 @@ function quran_pages_strongarm() {
     ),
     'extra_fields' => array(
       'form' => array(
-        'metatags' => array(
-          'weight' => '40',
-        ),
         'title' => array(
           'weight' => '-5',
-        ),
-        'path' => array(
-          'weight' => '30',
-        ),
-        'redirect' => array(
-          'weight' => '30',
         ),
       ),
       'display' => array(),
     ),
   );
   $export['field_bundle_settings_node__quran_pages'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'mediafront_views_options';
+  $strongarm->value = array(
+    'quran_pages' => array(
+      'field_quran_audio' => array(
+        'link_to_player' => 1,
+        'field_type' => 'media',
+        'media_type' => 'media',
+        'preview' => '0',
+        'thumbnail' => '0',
+        'custom' => '',
+      ),
+      'field_quran_page_image' => array(
+        'link_to_player' => 0,
+        'field_type' => '0',
+        'media_type' => 'media',
+        'preview' => '0',
+        'thumbnail' => '0',
+        'custom' => '',
+      ),
+      'mediafront_player' => array(
+        'link_to_player' => 1,
+        'field_type' => 'media',
+        'media_type' => 'media',
+        'preview' => '0',
+        'thumbnail' => '0',
+        'custom' => '',
+      ),
+    ),
+  );
+  $export['mediafront_views_options'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

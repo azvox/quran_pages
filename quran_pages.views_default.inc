@@ -51,7 +51,9 @@ function quran_pages_views_default_views() {
   $handler->display->display_options['fields']['field_quran_audio']['table'] = 'field_data_field_quran_audio';
   $handler->display->display_options['fields']['field_quran_audio']['field'] = 'field_quran_audio';
   $handler->display->display_options['fields']['field_quran_audio']['label'] = '';
+  $handler->display->display_options['fields']['field_quran_audio']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_quran_audio']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_quran_audio']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_quran_audio']['type'] = 'mediafront_player';
   $handler->display->display_options['fields']['field_quran_audio']['settings'] = array(
     'preset' => 'quran_pages',
@@ -384,45 +386,6 @@ function quran_pages_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Header: Global: MediaFront Player */
-  $handler->display->display_options['header']['mediafront_player']['id'] = 'mediafront_player';
-  $handler->display->display_options['header']['mediafront_player']['table'] = 'views';
-  $handler->display->display_options['header']['mediafront_player']['field'] = 'mediafront_player';
-  $handler->display->display_options['header']['mediafront_player']['mediafront_preset'] = 'quran_pages';
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: quran audio */
-  $handler->display->display_options['fields']['field_quran_audio']['id'] = 'field_quran_audio';
-  $handler->display->display_options['fields']['field_quran_audio']['table'] = 'field_data_field_quran_audio';
-  $handler->display->display_options['fields']['field_quran_audio']['field'] = 'field_quran_audio';
-  $handler->display->display_options['fields']['field_quran_audio']['label'] = '';
-  $handler->display->display_options['fields']['field_quran_audio']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_quran_audio']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_quran_audio']['type'] = 'mediafront_player';
-  $handler->display->display_options['fields']['field_quran_audio']['settings'] = array(
-    'preset' => 'quran_pages',
-  );
-  /* Field: Content: quran page image */
-  $handler->display->display_options['fields']['field_quran_page_image']['id'] = 'field_quran_page_image';
-  $handler->display->display_options['fields']['field_quran_page_image']['table'] = 'field_data_field_quran_page_image';
-  $handler->display->display_options['fields']['field_quran_page_image']['field'] = 'field_quran_page_image';
-  $handler->display->display_options['fields']['field_quran_page_image']['label'] = '';
-  $handler->display->display_options['fields']['field_quran_page_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_quran_page_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_quran_page_image']['settings'] = array(
-    'image_style' => '960x1581',
-    'image_link' => '',
-  );
-  /* Field: Content: page No */
-  $handler->display->display_options['fields']['field_page_no']['id'] = 'field_page_no';
-  $handler->display->display_options['fields']['field_page_no']['table'] = 'field_data_field_page_no';
-  $handler->display->display_options['fields']['field_page_no']['field'] = 'field_page_no';
-  $handler->display->display_options['fields']['field_page_no']['label'] = '';
-  $handler->display->display_options['fields']['field_page_no']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_page_no']['settings'] = array(
-    'thousand_separator' => ' ',
-    'prefix_suffix' => 1,
-  );
   $handler->display->display_options['path'] = 'quran-pages';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Quran Page images';
@@ -485,7 +448,7 @@ function quran_pages_views_default_views() {
     'thousand_separator' => ' ',
     'prefix_suffix' => 1,
   );
-  $handler->display->display_options['block_description'] = 'Dhegeyso Qur\'an';
+  $handler->display->display_options['block_description'] = 'Listen Qur\'an';
   $handler->display->display_options['block_caching'] = '8';
   $export['quran_pages'] = $view;
 

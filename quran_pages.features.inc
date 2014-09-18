@@ -105,13 +105,14 @@ function quran_pages_mediafront_default_presets() {
         'volumeVertical' => 1,
         'plugins' => array(
           'timeline_indicator' => 0,
+          'timeline_bookmark' => 0,
         ),
         'theme' => 'humanity',
         'showWhenEmpty' => 1,
         'showController' => 0,
         'prereel' => '',
         'postreel' => '',
-        'player_settings__active_tab' => 'edit-player-settings-playlist-settings',
+        'player_settings__active_tab' => 'edit-player-settings-presentation',
       ),
     ),
   );
@@ -124,22 +125,6 @@ function quran_pages_mediafront_default_presets() {
 function quran_pages_mediafront_views_default_options() {
   $options = array(
     'quran_pages' => array(
-      'field_quran_page_image' => array(
-        'link_to_player' => 0,
-        'field_type' => 0,
-        'media_type' => 'media',
-        'preview' => 0,
-        'thumbnail' => 0,
-        'custom' => '',
-      ),
-      'title' => array(
-        'link_to_player' => 0,
-        'field_type' => 0,
-        'media_type' => 'media',
-        'preview' => 0,
-        'thumbnail' => 0,
-        'custom' => '',
-      ),
       'field_quran_audio' => array(
         'link_to_player' => 1,
         'field_type' => 'media',
@@ -148,15 +133,7 @@ function quran_pages_mediafront_views_default_options() {
         'thumbnail' => 0,
         'custom' => '',
       ),
-      'field_page_no' => array(
-        'link_to_player' => 0,
-        'field_type' => 0,
-        'media_type' => 'media',
-        'preview' => 0,
-        'thumbnail' => 0,
-        'custom' => '',
-      ),
-      'field_page_no_value' => array(
+      'field_quran_page_image' => array(
         'link_to_player' => 0,
         'field_type' => 0,
         'media_type' => 'media',
@@ -185,7 +162,7 @@ function quran_pages_node_info() {
     'quran_pages' => array(
       'name' => t('Quran pages'),
       'base' => 'node_content',
-      'description' => '',
+      'description' => t('To import Qur\'an Pages of type images'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',

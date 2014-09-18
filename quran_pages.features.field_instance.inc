@@ -10,50 +10,6 @@
 function quran_pages_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-quran_pages-body'
-  $field_instances['node-quran_pages-body'] = array(
-    'bundle' => 'quran_pages',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(
-          'trim_length' => 600,
-        ),
-        'type' => 'text_summary_or_trimmed',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'body',
-    'label' => 'Body',
-    'required' => FALSE,
-    'settings' => array(
-      'display_summary' => TRUE,
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 20,
-        'summary_rows' => 5,
-      ),
-      'type' => 'text_textarea_with_summary',
-      'weight' => 41,
-    ),
-  );
-
   // Exported field_instance: 'node-quran_pages-field_page_no'
   $field_instances['node-quran_pages-field_page_no'] = array(
     'bundle' => 'quran_pages',
@@ -62,7 +18,7 @@ function quran_pages_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'number',
         'settings' => array(
           'decimal_separator' => '.',
@@ -71,19 +27,19 @@ function quran_pages_field_default_field_instances() {
           'thousand_separator' => ' ',
         ),
         'type' => 'number_integer',
-        'weight' => 4,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 4,
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_page_no',
     'label' => 'page No',
-    'required' => FALSE,
+    'required' => 0,
     'settings' => array(
       'max' => '',
       'min' => '',
@@ -92,37 +48,34 @@ function quran_pages_field_default_field_instances() {
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 0,
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 45,
+      'weight' => -1,
     ),
   );
 
   // Exported field_instance: 'node-quran_pages-field_quran_audio'
   $field_instances['node-quran_pages-field_quran_audio'] = array(
     'bundle' => 'quran_pages',
-    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'mediafront',
         'settings' => array(
           'preset' => 'quran_pages',
         ),
         'type' => 'mediafront_player',
-        'weight' => 5,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
-        'module' => 'mediafront',
-        'settings' => array(
-          'preset' => '',
-        ),
-        'type' => 'mediafront_player',
-        'weight' => 1,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
@@ -130,6 +83,10 @@ function quran_pages_field_default_field_instances() {
     'label' => 'quran audio',
     'required' => 0,
     'settings' => array(
+      'description_field' => 0,
+      'file_directory' => 'quran_audio',
+      'file_extensions' => 'jpg jpeg gif png txt doc xls pdf ppt pps odt ods odp mp3 mov m4v mp4 mpeg avi ogg oga ogv wmv ico',
+      'max_filesize' => '',
       'mediafront' => array(
         'custom' => '',
         'field_type' => 0,
@@ -137,17 +94,16 @@ function quran_pages_field_default_field_instances() {
         'preview' => 0,
         'thumbnail' => 0,
       ),
-      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'text',
+      'module' => 'file',
       'settings' => array(
-        'size' => 60,
+        'progress_indicator' => 'throbber',
       ),
-      'type' => 'text_textfield',
-      'weight' => 46,
+      'type' => 'file_generic',
+      'weight' => 0,
     ),
   );
 
@@ -158,7 +114,7 @@ function quran_pages_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
@@ -171,13 +127,13 @@ function quran_pages_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_quran_page_image',
     'label' => 'quran page image',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'alt_field' => 0,
       'default_image' => 0,
@@ -185,13 +141,6 @@ function quran_pages_field_default_field_instances() {
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
       'max_resolution' => '',
-      'mediafront' => array(
-        'custom' => '',
-        'field_type' => 0,
-        'media_type' => 'media',
-        'preview' => 0,
-        'thumbnail' => 0,
-      ),
       'min_resolution' => '',
       'title_field' => 0,
       'user_register_form' => FALSE,
@@ -204,7 +153,7 @@ function quran_pages_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 42,
+      'weight' => -3,
     ),
   );
 
@@ -216,7 +165,7 @@ function quran_pages_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'number',
         'settings' => array(
           'decimal_separator' => '.',
@@ -225,13 +174,13 @@ function quran_pages_field_default_field_instances() {
           'thousand_separator' => ' ',
         ),
         'type' => 'number_integer',
-        'weight' => 3,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 2,
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
@@ -240,13 +189,6 @@ function quran_pages_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'max' => '',
-      'mediafront' => array(
-        'custom' => '',
-        'field_type' => 0,
-        'media_type' => 'media',
-        'preview' => 0,
-        'thumbnail' => 0,
-      ),
       'min' => '',
       'prefix' => '',
       'suffix' => '',
@@ -257,13 +199,12 @@ function quran_pages_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 44,
+      'weight' => -2,
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Body');
   t('page No');
   t('quran audio');
   t('quran page image');

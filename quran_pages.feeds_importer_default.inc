@@ -16,15 +16,15 @@ function quran_pages_feeds_importer_default() {
   $feeds_importer->id = 'quran_page_importer';
   $feeds_importer->config = array(
     'name' => 'quran page importer',
-    'description' => 'clone of node import',
+    'description' => 'A clone of node importer',
     'fetcher' => array(
       'plugin_key' => 'FeedsFileFetcher',
       'config' => array(
-        'direct' => 0,
+        'direct' => FALSE,
         'allowed_extensions' => 'txt csv tsv xml opml',
         'directory' => 'public://feeds',
         'allowed_schemes' => array(
-          'public' => 'public',
+          0 => 'public',
         ),
       ),
     ),
@@ -43,7 +43,7 @@ function quran_pages_feeds_importer_default() {
         'expire' => '-1',
         'mappings' => array(
           0 => array(
-            'source' => 'Title',
+            'source' => 'title',
             'target' => 'title',
             'unique' => 1,
           ),
@@ -69,7 +69,7 @@ function quran_pages_feeds_importer_default() {
           ),
         ),
         'input_format' => 'filtered_html',
-        'author' => '1',
+        'author' => 0,
         'authorize' => 0,
         'skip_hash_check' => 0,
       ),
